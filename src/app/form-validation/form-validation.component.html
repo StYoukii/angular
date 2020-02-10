@@ -1,0 +1,34 @@
+<div class="container">
+  <form (ngSubmit)="onSubmit()">
+    <fieldset>
+      <legend>Formulaire</legend>
+
+      <h1>Radio validation</h1>
+
+      <div class="form-group">
+        <label class="control-label">Type</label>
+        <label for="offer" class="radio-inline">
+          <input type="radio" id="offer" [(ngModel)]="model.type" name="type" value="0" required>Offer</label>
+        <label for="rent" class="radio-inline">
+          <input type="radio" id="rent" [(ngModel)]="model.type" name="type" value="1"  required>Rent</label>
+
+        <p class="error-message">Le champ précédent comporte des erreurs</p>
+      </div>
+
+      <h1>Text input validation</h1>
+
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" [(ngModel)]="model.name" name="name" minlength="3" required #name="ngModel">
+
+        <div *ngIf="name.errors && name.dirty" class="error-message">
+          <p [hidden]="name.errors.minLength">Must be at least 3 characters</p>
+          <p [hidden]="!name.errors.required">Is required</p>
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-success">Submit</button>
+
+    </fieldset>
+  </form>
+</div>

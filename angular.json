@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "seconLife": {
@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "seconLife"
+    }
+  },
+  "defaultProject": "seconLife",
+  "cli": {
+    "analytics": "22002d03-d43d-422e-b3b4-eb035bf91e44"
+  }
 }
